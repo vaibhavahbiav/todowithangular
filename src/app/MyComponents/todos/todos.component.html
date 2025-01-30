@@ -1,0 +1,14 @@
+<div class="flex flex-col items-center justify-center space-y-10">
+    <app-add-todo (todoAdd)="addTodo($event)" />
+    <div class="flex flex-col space-y-2 items-center">
+        <h3 class="font-extrabold ml-4 text-3xl text-blue-500 tracking-wide">Your Todos</h3>
+        <div *ngIf="this.todos.length === 0; else elseBlock" class="text-white py-10 text-2xl tracking-wide">Add todos to see todos.</div>
+        <ng-template #elseBlock>
+            <div class="grid grid-cols-4 gap-5 ">
+                <div *ngFor="let ToDo of todos" class=" text-gray-200 py-3 px-1">
+                    <app-todo-item [todo]="ToDo" (todoDelete)="deleteTodo($event)" (todoCheckbox)="toggleTodo($event)" />
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="flex flex-col space-y-2 mt-10 text-center">
+    <h3 class="font-extrabold ml-4 text-3xl text-blue-500 tracking-wide">Add Todo</h3>
+    <form (ngSubmit)="onSubmit()">
+        <div class="flex flex-col space-y-5 text-left items-start justify-start bg-gray-200 py-5 px-10 rounded-xl my-3">
+            <div class="flex flex-col space-y-3 w-[800px]">
+                <label for="todo-title" class="text-2xl tracking-wide">Title:</label>
+                <input [(ngModel)]="title" type="text" name="title" id="todo-title" class="bg-gray-800 text-white rounded-sm py-2 px-3" placeholder="enter here..." />
+            </div>
+            <div class="flex flex-col space-y-3 w-[800px]">
+                <label for="todo-description" class="text-2xl tracking-wide">Description:</label>
+                <input [(ngModel)]="description" type="text" name="description" id="todo-description" class="bg-gray-800 text-white rounded-sm py-2 px-3"placeholder="enter here..."  />
+            </div>
+            <button class="size-10 pb-2 rounded-xl bg-blue-500 cursor-pointer text-white text-3xl hover:brightness-110 self-end">+</button>
+        </div>
+    </form>
+</div>
